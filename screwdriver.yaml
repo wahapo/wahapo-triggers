@@ -5,7 +5,7 @@ jobs:
     steps:
       - ls: ls
   child-trigger:
-    requires: [ ~sd@3:main ]
+    requires: [ ~sd@2:main ]
     image: node:8
     steps:
       - ls: ls
