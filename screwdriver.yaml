@@ -4,7 +4,7 @@ jobs:
     image: node:8
     steps:
       - ls: ls
-  main2:
+  main-2:
     requires: [ ~main ]
     image: node:8
     steps:
