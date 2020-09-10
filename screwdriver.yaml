@@ -4,6 +4,11 @@ jobs:
     image: node:8
     steps:
       - ls: ls
+  main-2:
+    requires: [ ~main ]
+    image: node:8
+    steps:
+      - ls: ls
   from-child-trigger:
     requires: [ ~sd@2:main-2 ]
     image: node:8
