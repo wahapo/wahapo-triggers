@@ -4,8 +4,6 @@ jobs:
     image: node:8
     steps:
       - ls: ls
-    annotations:
-      hoge: 1
   main-2:
     requires: [ ~main ]
     image: node:8
