@@ -5,12 +5,14 @@ jobs:
     steps:
       - ls: ls
     annotations:
-      hoge: 1
+      screwdriver.cd/displayName: foooo
   main-2:
     requires: [ ~main ]
     image: node:8
     steps:
       - ls: ls
+    annotations:
+      screwdriver.cd/displayName: 0
   from-parent-trigger:
     requires: [ ~sd@1:main-2 ]
     image: node:8
