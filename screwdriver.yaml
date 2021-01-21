@@ -17,7 +17,12 @@ jobs:
     steps:
       - sleep 30
   main-4:
-    requires: [ main-2, main-3 ]
+    requires: [ ~main ]
+    image: node:8
+    steps:
+      - sleep 30
+  main-5:
+    requires: [ main-2, main-3, main-4 ]
     image: node:8
     steps:
       - ls: ls
