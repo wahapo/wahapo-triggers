@@ -10,14 +10,15 @@ jobs:
     requires: [ ~main ]
     image: node:8
     steps:
-      - ls: ls
-    annotations:
-      screwdriver.cd/displayName: 0
-  from-parent-trigger:
-    requires: [ ~sd@1:main-2 ]
+      - sleep 30
+  main-3:
+    requires: [ ~main ]
+    image: node:8
+    steps:
+      - sleep 30
+  main-4:
+    requires: [ main-2, main-3 ]
     image: node:8
     steps:
       - ls: ls
-
-
 
