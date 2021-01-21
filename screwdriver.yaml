@@ -1,29 +1,20 @@
+shared:
+  image: node:12
+  steps:
+    - ls
+    
 jobs:
-  main:
+  start:
     requires: [ ~pr, ~commit ]
-    image: node:8
-    steps:
-      - ls: ls
-    annotations:
-      screwdriver.cd/displayName: foooo
-  main-2:
-    requires: [ ~main ]
-    image: node:8
-    steps:
-      - sleep 30
-  main-3:
-    requires: [ ~main ]
-    image: node:8
-    steps:
-      - sleep 30
-  main-4:
-    requires: [ ~main ]
-    image: node:8
-    steps:
-      - sleep 30
-  main-5:
-    requires: [ main-2, main-3, main-4 ]
-    image: node:8
-    steps:
-      - ls: ls
-
+    
+  sub-1:
+    requires: [ ~start ]
+    
+  sub-2:
+    requires: [ ~start ]
+    
+  sub-3:
+    requires: [ ~start ]
+    
+  end:
+    requires: [ sub-1, sub-2, sub-3 ]
