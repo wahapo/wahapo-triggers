@@ -11,13 +11,10 @@ jobs:
     requires: [ ~start ]
     
   sub-2:
-    requires: [ ~start ]
+    requires: [ ~sub1 ]
     
   sub-3:
-    requires: [ ~start ]
-
-  sub-4:
-    requires: [ ~start ]
+    requires: [ ~sub2 ]
 
   end:
-    requires: [ ~sub-1, ~sub-2, ~sub-3, ~sub-4 ]
+    requires: [ ~start, ~sub-1, ~sub-3 ]
