@@ -19,11 +19,5 @@ jobs:
   sub-4:
     requires: [ ~start ]
 
-  sub-5:
-    requires: [ ~start ]
-
-  sub-6:
-    requires: [ ~start ]
-
   end:
-    requires: [ sub-1, sub-2, sub-3, sub-4, sub-5, sub-6 ]
+    requires: [ ~sub-1, ~sub-2, ~sub-3, ~sub-4 ]
